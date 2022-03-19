@@ -1,6 +1,5 @@
 <template>
   <common-header></common-header>
-
   <router-view></router-view>
 </template>
 
@@ -10,6 +9,7 @@ onMounted(() => {
   // window.addEventListener('scroll',()=>{
   //   console.log(document.documentElement.scrollTop);
   // })
+  
 });
 </script>
 

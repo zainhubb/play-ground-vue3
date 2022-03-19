@@ -10,8 +10,7 @@
 import { useRouter } from 'vue-router';
 const router = useRouter();
 const go = (e) => {
-  router.hasRoute(e+'') && router.push(`/playground/${e}`)
-
+  router.hasRoute(e + '') && router.push(`/playground/${e}`)
 }
 </script>
 
@@ -24,6 +23,7 @@ const go = (e) => {
   margin: 0 auto;
   padding: 10px;
   border: 1px solid black;
+  box-sizing: content-box;
   & .item {
     width: 100px;
     height: 100px;
