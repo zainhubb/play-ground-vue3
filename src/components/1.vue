@@ -10,8 +10,10 @@ calculatePoint()
 const startBranchLength = 5 // 起始线长度
 const startAngle = startY === 0 ? Math.PI / 2 : startY === HEIGHT ? -Math.PI / 2 : startX == 0 ? 0 : -Math.PI // 起始线角度
 const minBranchLength = 5 // 保底深度
-const maxBranchLength = 1000 // 最大深度
-const branchStep = 0.5 // 产生左分枝和右分枝的概率 注意，如果最大深度比较大，超过0.5可能会变得很卡
+const maxBranchLength = 500 // 最大深度
+const branchStep = 0.49 // 产生左分枝和右分枝的概率 注意，如果最大深度比较大，超过0.5可能会变得很卡
+const angleRange = 0.25 // 子树叶角度范围
+const lengthRange = 0.1 // 子树叶长度范围
 const startPoint = {  // 初始话起始点
     x: startX, y: startY
 }
@@ -30,7 +32,7 @@ function init() {
     step(branch)
 }
 
-const branchList = []
+let branchList = []
 // 画出每一层的分支，并添加下一层分支
 function frame() {
     const arr = [...branchList]
@@ -55,28 +57,28 @@ startFrame()
 
 // 配合 requestAnimationFrame 实现递归
 function step(branch, depth = 0) {
-    drewBranch(branch)
+    drawBranch(branch)
     if (depth < minBranchLength || Math.random() < branchStep && depth < maxBranchLength) {
         branchList.push(() => step({
             startPoint: getEndPoint(branch),
-            length: branch.length,
-            angle: branch.angle + 0.25 * Math.random()
+            length: branch.length + lengthRange * branch.length * (1 - Math.random() * 2),
+            angle: branch.angle + angleRange * Math.random()
         }, depth + 1))
     }
     if (depth < minBranchLength || Math.random() < branchStep && depth < maxBranchLength) {
         branchList.push(() => step({
             startPoint: getEndPoint(branch),
-            length: branch.length + 0.1 * branch.length * (1 - Math.random() * 2),
-            angle: branch.angle - 0.25 * Math.random()
+            length: branch.length + lengthRange * branch.length * (1 - Math.random() * 2),
+            angle: branch.angle - angleRange * Math.random()
         }, depth + 1))
     }
 }
 // 画分支工具函数
-function drewBranch(branch) {
-    drewLine(branch.startPoint, getEndPoint(branch))
+function drawBranch(branch) {
+    drawLine(branch.startPoint, getEndPoint(branch))
 }
 // 画线工具函数
-function drewLine(p1, p2) {
+function drawLine(p1, p2) {
     ctx.value.beginPath()
     ctx.value.moveTo(p1.x, p1.y)
     ctx.value.lineTo(p2.x, p2.y)
@@ -93,6 +95,11 @@ function getEndPoint(line) {
 onMounted(() => {
     init()
 })
+function reDraw() {
+    branchList = []
+    ctx.value.clearRect(0, 0, WIDTH, HEIGHT)
+    init()
+}
 function download() {
     const link = document.createElement('a')
     link.href = el.value.toDataURL('image/png')
@@ -102,21 +109,23 @@ function download() {
 </script>
 
 <template>
-        <div class="canvas" :style="{ height: HEIGHT + 'px', width: WIDTH + 'px' }">
-            <canvas ref="el" :width="WIDTH" :height="HEIGHT"></canvas>
-        </div>
-        <div class="bottom">
-            <button @click="download">Download</button>
-        </div>
+    <div class="canvas" :style="{ height: HEIGHT + 'px', width: WIDTH + 'px' }">
+        <canvas ref="el" :width="WIDTH" :height="HEIGHT"></canvas>
+    </div>
+    <div class="botton">
+        <button @click="reDraw">ReDraw</button>
+        <button @click="download">Download</button>
+    </div>
 </template>
 
 <style scoped lang="postcss">
-.bottom {
+.botton {
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    gap:20px;
     & button {
         border: 1px solid black;
         border-radius: 5px;
@@ -126,11 +135,14 @@ function download() {
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         color: black;
         transition: all 0.3s;
+
         &:hover {
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 1);
+            color: #fff;
         }
     }
 }
+
 .canvas {
     border: 1px solid black;
     margin: 0 auto;
