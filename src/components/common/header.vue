@@ -27,14 +27,17 @@ window.addEventListener('scroll', () => {
     margin-bottom: 20px;
     position: sticky;
     top: 0;
+
     & .text {
         text-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
         cursor: pointer;
     }
 }
+
 .scrolled {
     background-color: transparent;
     box-shadow: 1px 0 10px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 </style>
