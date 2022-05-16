@@ -1,22 +1,23 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
+console.log(window.innerWidth)
+console.log(window.innerHeight)
 const el = ref(null) // canvas element
 const ctx = computed(() => el.value.getContext('2d'))
-const HEIGHT = 600 // canvas高度
-const WIDTH = 600  // canvas宽度
+const HEIGHT = window.innerWidth>600?600:window.innerWidth // canvas高度
+const WIDTH = HEIGHT  // canvas宽度
 let startX = 0 // 起始点横坐标
 let startY = 0// 起始点纵坐标
-calculatePoint()
 const startBranchLength = 5 // 起始线长度
-const startAngle = startY === 0 ? Math.PI / 2 : startY === HEIGHT ? -Math.PI / 2 : startX == 0 ? 0 : -Math.PI // 起始线角度
+// const startAngle = startY === 0 ? Math.PI / 2 : startY === HEIGHT ? -Math.PI / 2 : startX == 0 ? 0 : -Math.PI // 起始线角度
 const minBranchLength = 5 // 保底深度
 const maxBranchLength = 500 // 最大深度
 const branchStep = 0.49 // 产生左分枝和右分枝的概率 注意，如果最大深度比较大，超过0.5可能会变得很卡
 const angleRange = 0.25 // 子树叶角度范围
 const lengthRange = 0.1 // 子树叶长度范围
-const startPoint = {  // 初始话起始点
-    x: startX, y: startY
-}
+// const startPoint = {  // 初始话起始点
+//     x: startX, y: startY
+// }
 // 计算起始点 防止生成在角落
 function calculatePoint() {
     startX = Math.random() < 0.5 ? Math.random() < 0.5 ? 0 : WIDTH : WIDTH * Math.random()
@@ -24,10 +25,14 @@ function calculatePoint() {
 }
 
 function init() {
+    calculatePoint()
     const branch = {
-        startPoint: startPoint,
+        startPoint: {
+            x:startX,
+            y:startY
+        },
         length: startBranchLength,
-        angle: startAngle
+        angle: startY === 0 ? Math.PI / 2 : startY === HEIGHT ? -Math.PI / 2 : startX == 0 ? 0 : -Math.PI
     }
     step(branch)
 }
