@@ -11,8 +11,8 @@ let startY = 0// 起始点纵坐标
 const startBranchLength = 5 // 起始线长度
 // const startAngle = startY === 0 ? Math.PI / 2 : startY === HEIGHT ? -Math.PI / 2 : startX == 0 ? 0 : -Math.PI // 起始线角度
 const minBranchLength = 5 // 保底深度
-const maxBranchLength = 500 // 最大深度
-const branchStep = 0.49 // 产生左分枝和右分枝的概率 注意，如果最大深度比较大，超过0.5可能会变得很卡
+const maxBranchLength = 1000 // 最大深度
+const branchStep = 0.5 // 产生左分枝和右分枝的概率 注意，如果最大深度比较大，超过0.5可能会变得很卡
 const angleRange = 0.25 // 子树叶角度范围
 const lengthRange = 0.1 // 子树叶长度范围
 // const startPoint = {  // 初始话起始点
