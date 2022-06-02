@@ -1,10 +1,10 @@
 <template>
-    <slot name="zain" :info="a"></slot>
+    <slot name="zain" v-bind="info"></slot>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-const a = ref({
+const info = ref({
     name: 'zain'
 })
 </script>

@@ -2,12 +2,16 @@
   <div>
     <div class="container">
       <div class="item" v-for="(item, index) in 9" @click="go(index + 1)">{{ index + 1 }}</div>
+      <!-- <div>{{x}}{{y}}</div> -->
     </div>
   </div>
 </template>
 
 <script setup>
+// import useMouse from '../hooks/useMouse'
 import { useRouter } from 'vue-router';
+// const { x, y } = useMouse()
+
 const router = useRouter();
 const go = (e) => {
   router.hasRoute(e + '') && router.push(`/playground/${e}`)

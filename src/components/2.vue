@@ -19,7 +19,6 @@ const f = {
 }
 
 onMounted(async () => {
-
     var render = Render.create({
         element: canvas.value,
         engine: engine.value,
