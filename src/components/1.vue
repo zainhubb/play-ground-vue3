@@ -136,7 +136,7 @@ function download() {
         border-radius: 5px;
         padding: 5px;
         background: transparent;
-        cursor: pointer;
+        /* cursor: pointer; */
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         color: black;
         transition: all 0.3s;

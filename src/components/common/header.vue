@@ -30,7 +30,7 @@ window.addEventListener('scroll', () => {
 
     & .text {
         text-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
+        /* cursor: pointer; */
     }
 }
 

@@ -36,7 +36,7 @@ const go = (e) => {
     align-items: center;
     transition: all 0.3s;
     background-color: rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+    /* cursor: pointer; */
     &:hover {
       background-color: rgba(0, 0, 0, 0.25);
     }
