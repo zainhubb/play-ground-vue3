@@ -9,6 +9,7 @@
 import zhCN from 'ant-design-vue/es/locale/zh_CN';
 import { onMounted } from 'vue';
 onMounted(() => {
+  console.log('123')
   // window.addEventListener('scroll',()=>{
   //   console.log(document.documentElement.scrollTop);
   // })

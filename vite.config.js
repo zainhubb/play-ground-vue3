@@ -32,10 +32,19 @@ export default defineConfig({
       '/api': {
         target: 'https://jsonplaceholder.typicode.com/',
         changeOrigin: true,
-        rewrite:(path)=>path.replace(/^\/api/,'')
+        rewrite: (path) => path.replace(/^\/api/, '')
       }
     },
-    host:'0.0.0.0',
-    port:3212,
+    host: '0.0.0.0',
+    port: 3212,
+  },
+  build: {
+    minify: "terser",
+    terserOptions: {
+         compress: {
+            drop_console: true,
+            drop_debugger: true
+         }
+    }
   }
 })
