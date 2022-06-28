@@ -1,0 +1,1 @@
+/* empty css              */import{u as t,e as s,o as e,A as r,C as o}from"./vendor.7e4df2b9.js";const a={setup(a){const u=t();return s((()=>{u.currentRoute.value})),(t,s)=>{const a=o;return e(),r(a,{status:"404",title:"404"})}}};export{a as default};
