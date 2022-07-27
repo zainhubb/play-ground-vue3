@@ -13,8 +13,6 @@ import useMouse from './hooks/useMouse';
 import zhCN from 'ant-design-vue/es/locale/zh_CN';
 import { onMounted, watchEffect, ref, computed } from 'vue';
 const { x, y } = useMouse()
-const xa = computed(()=>x.value+"px")
-const ya = computed(()=>y.value+"px")
 const isMobile = computed(()=>navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))
 </script>
 
@@ -26,8 +24,8 @@ const isMobile = computed(()=>navigator.userAgent.match(/(phone|pad|pod|iPhone|i
 
   & .mouse {
     position: absolute;
-    left: v-bind('xa');
-    top: v-bind('ya');
+    left: v-bind("x+'px'");
+    top: v-bind("y+'px'");
     width: 10px;
     height: 10px;
     border-radius: 5px;

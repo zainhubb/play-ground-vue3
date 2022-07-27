@@ -1,6 +1,6 @@
 <template>
     <div :class="['header', { 'scrolled': scrolled }]">
-        <div class="text" @click="go">{{ isIndex ? 'Zain' : 'Back' }}</div>
+        <div class="text" @click="go">{{ isIndex ? 'zain' : 'back' }}</div>
     </div>
 </template>
 
@@ -30,7 +30,6 @@ window.addEventListener('scroll', () => {
 
     & .text {
         text-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-        /* cursor: pointer; */
     }
 }
 

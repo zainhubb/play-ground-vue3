@@ -87,7 +87,7 @@ function drawLine(p1, p2) {
     ctx.value.beginPath()
     ctx.value.moveTo(p1.x, p1.y)
     ctx.value.lineTo(p2.x, p2.y)
-    ctx.value.strokeStyle = "rgba(0,0,0,0.1)"
+    ctx.value.strokeStyle = "rgba(0,0,0,0.3)"
     ctx.value.stroke()
 }
 // 获取线段终点坐标
@@ -118,8 +118,8 @@ function download() {
         <canvas ref="el" :width="WIDTH" :height="HEIGHT"></canvas>
     </div>
     <div class="botton">
-        <button @click="reDraw">ReDraw</button>
-        <button @click="download">Download</button>
+        <button @click="reDraw">redraw</button>
+        <button @click="download">download</button>
     </div>
 </template>
 
@@ -136,7 +136,7 @@ function download() {
         border-radius: 5px;
         padding: 5px;
         background: transparent;
-        /* cursor: pointer; */
+        cursor: none;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
         color: black;
         transition: all 0.3s;
