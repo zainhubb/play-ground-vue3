@@ -27,7 +27,8 @@ window.addEventListener('scroll', () => {
     margin-bottom: 20px;
     position: sticky;
     top: 0;
-
+    background-image: radial-gradient(transparent 1px,rgba(255,255,255) 1px);
+    background-size: 3px 3px;
     & .text {
         text-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
     }

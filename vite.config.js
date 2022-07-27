@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/dist/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/dist/resolvers'
 import postcssNesting from 'postcss-nesting';
+import { resolve } from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(),
@@ -25,6 +26,11 @@ export default defineConfig({
       less: {
         javascriptEnabled: true
       }
+    }
+  },
+  resolve:{
+    alias:{
+      '@assets':resolve(__dirname,'src/assets'),
     }
   },
   server: {
