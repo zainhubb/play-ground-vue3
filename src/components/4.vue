@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Renderer ref="renderer">
+    <Renderer ref="renderer" v-bind="option">
       <Camera :position="{ z: 10 }" />
       <Scene>
         <PointLight :position="{ y: 50, z: 50 }" />
@@ -13,9 +13,14 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, reactive, ref } from 'vue';
 const renderer = ref(null)
 const box = ref(null)
+const option = reactive({
+  orbitCtrl: true,
+  width: 500,
+  height: 500
+})
 onMounted(() => {
   renderer.value.onBeforeRender(() => {
     box.value.mesh.rotation.x += 0.01;
