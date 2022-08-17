@@ -27,16 +27,17 @@ window.addEventListener('scroll', () => {
     margin-bottom: 20px;
     position: sticky;
     top: 0;
-    background-image: radial-gradient(transparent 1px,rgba(255,255,255) 1px);
+    background-image: radial-gradient(transparent 1px,var(--magic-bg) 1px);
     background-size: 3px 3px;
+    color: var(--magic-color);
     & .text {
-        text-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        text-shadow: 0 5px 5px var(--magic-textshadow);
     }
 }
 
 .scrolled {
     background-color: transparent;
-    box-shadow: 1px 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 0 10px var(--magic-boxshadow);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }

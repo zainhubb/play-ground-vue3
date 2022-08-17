@@ -29,7 +29,7 @@ const isMobile = computed(()=>navigator.userAgent.match(/(phone|pad|pod|iPhone|i
     width: 10px;
     height: 10px;
     border-radius: 5px;
-    background-color: black;
+    background-color: var(--magic-color);
     pointer-events: none;
   }
 }

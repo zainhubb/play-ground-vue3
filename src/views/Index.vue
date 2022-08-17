@@ -23,8 +23,9 @@ const go = (e) => {
   width: 320px;
   margin: 0 auto;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid var(--magic-color);;
   box-sizing: content-box;
+  color: var(--magic-color);
   & .item {
     width: 100px;
     height: 100px;
@@ -32,10 +33,10 @@ const go = (e) => {
     justify-content: center;
     align-items: center;
     transition: all 0.3s;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
     /* cursor: pointer; */
     &:hover {
-      background-color: rgba(0, 0, 0, 0.25);
+      background-color: rgba(0, 0, 0, 0.4);
     }
   }
 }

@@ -132,18 +132,18 @@ function download() {
     margin-top: 20px;
     gap:20px;
     & button {
-        border: 1px solid black;
+        border: 1px solid var(--magic-color);
         border-radius: 5px;
         padding: 5px;
         background: transparent;
         cursor: none;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        color: black;
+        box-shadow: 0 5px 10px var(--magic-boxshadow);
+        color: var(--magic-color);
         transition: all 0.3s;
 
         &:hover {
-            background: rgba(0, 0, 0, 1);
-            color: #fff;
+            background: var(--magic-color);
+            color: var(--magic-recolor);
         }
     }
 }
