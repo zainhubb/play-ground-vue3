@@ -48,18 +48,10 @@ const changeTheme = () => {
 }
 onMounted(() => {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        console.log(123);
         theme.value = 'dark'
         changeTheme()
     }
 })
-// onMounted(()=>{
-//     window.matchMedia('(prefers-color-scheme: dark)').addListener(()=>{
-//         console.log(123);
-//         theme.value = 'dark'
-//         changeTheme()
-//     })
-// })
 const scrolled = ref(false)
 window.addEventListener('scroll', () => {
     scrolled.value = document.documentElement.scrollTop > 0

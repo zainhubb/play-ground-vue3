@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Renderer ref="renderer" v-bind="option">
+    <!-- <Renderer ref="renderer" v-bind="option">
       <Camera :position="{ z: 10 }" />
       <Scene>
         <PointLight :position="{ y: 50, z: 50 }" />
@@ -8,7 +8,7 @@
           <LambertMaterial />
         </Box>
       </Scene>
-    </Renderer>
+    </Renderer> -->
   </div>
 </template>
 
@@ -21,9 +21,9 @@ const option = reactive({
   height: 500
 })
 onMounted(() => {
-  renderer.value.onBeforeRender(() => {
-    box.value.mesh.rotation.x += 0.01;
-  });
+  // renderer.value.onBeforeRender(() => {
+  //   box.value.mesh.rotation.x += 0.01;
+  // });
 })
 
 </script>

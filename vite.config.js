@@ -4,8 +4,10 @@ import Components from 'unplugin-vue-components/vite' // 自动注册组件
 import AutoImport from 'unplugin-auto-import/vite' // 自动导入依赖
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import { resolve } from "path";
+import { visualizer } from "rollup-plugin-visualizer";
 export default defineConfig({
   plugins: [
+    visualizer(),
     vue(),
     Components({
       dirs: ['src/components'],
@@ -24,14 +26,14 @@ export default defineConfig({
         'vue-router',
         'pinia',
         {
-          'vue-router':['createRouter','createWebHashHistory'],
-          'troisjs': ['TroisJSVuePlugin'], // import { TroisJSVuePlugin } from 'troisjs';
+          'vue-router': ['createRouter', 'createWebHashHistory'],
+          // 'troisjs': ['TroisJSVuePlugin'], // import { TroisJSVuePlugin } from 'troisjs';
           'axios': [
             // default imports
             ['default', 'axios'], // import { default as axios } from 'axios',
           ],
-          'matter-js':[
-            ['default','Matter'] // import { default as axios } from 'axios',
+          'matter-js': [
+            ['default', 'Matter'] 
           ],
           'naive-ui': [
             'useDialog',
@@ -43,7 +45,7 @@ export default defineConfig({
         }
       ],
       // 优先级:导出名>文件名>上层文件夹名
-      dirs: ['src/hooks', 'src/router', 'src/network','src/utils','src/pinia'],
+      dirs: ['src/hooks', 'src/router', 'src/network', 'src/utils', 'src/pinia'],
     })
   ],
   base: './',
