@@ -2,7 +2,10 @@
   <div>
     <n-button @click="toggle">toggle</n-button>
     <demo :age="age"></demo>
-    <h1 class="text-red-300 dark:text-white">123</h1>
+    <div class="flex bg-yellow-50 text-red-800 hover:text-blue-600">
+      <div class="">1</div>
+      <div>1</div>
+    </div>
   </div>
 </template>
 
@@ -22,4 +25,5 @@ getUser()
 </script>
 
 <style lang="postcss" scoped>
+
 </style>

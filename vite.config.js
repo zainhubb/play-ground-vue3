@@ -35,7 +35,7 @@ export default defineConfig({
         }
       ],
       // 优先级:导出名>文件名>上层文件夹名
-      dirs: ['src/hooks', 'src/router', 'src/network'],
+      dirs: ['src/hooks', 'src/router', 'src/network','src/utils'],
     })
   ],
   base: './',
