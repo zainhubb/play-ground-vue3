@@ -1,5 +1,4 @@
-import axios from "axios";
-axios.defaults.baseURL = '/api'
+axios.defaults.baseURL = import.meta.env.MODE=='production'?'https://jsonplaceholder.typicode.com/':'/api'
 axios.interceptors.request.use(request => {
     return request
 })

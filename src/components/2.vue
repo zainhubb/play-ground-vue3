@@ -3,8 +3,6 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
-import Matter from 'matter-js'
 const { Bodies, Composite, Runner, Render, Engine } = Matter
 const canvas = ref(null)
 const engine = ref(null)

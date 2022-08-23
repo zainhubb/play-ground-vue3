@@ -1,9 +1,7 @@
 <template>
   <div class="main">
     <common-header></common-header>
-    <a-config-provider :locale="zhCN">
       <router-view></router-view>
-    </a-config-provider>
     <template v-if="!isMobile">
       <div class="mouse" ref="mouseRef"></div>
       <div class="mouseRange" ref="mouseRangeRef"></div>
@@ -13,9 +11,6 @@
 </template>
 
 <script setup>
-import useMouse from './hooks/useMouse';
-import zhCN from 'ant-design-vue/es/locale/zh_CN';
-import { onMounted, watchEffect, ref, computed } from 'vue';
 const { x, y } = useMouse()
 const mouseRef = ref(null)
 const mouseRangeRef = ref(null)

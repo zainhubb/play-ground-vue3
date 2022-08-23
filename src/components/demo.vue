@@ -6,8 +6,6 @@
 </template>
 
 <script setup>
-import { computed } from '@vue/reactivity';
-import { ref, useAttrs } from 'vue';
 
 const props = defineProps({
   age: {

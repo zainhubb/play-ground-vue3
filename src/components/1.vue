@@ -1,7 +1,4 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue';
-console.log(window.innerWidth)
-console.log(window.innerHeight)
 const el = ref(null) // canvas element
 const ctx = computed(() => el.value.getContext('2d'))
 const HEIGHT = window.innerWidth>600?600:window.innerWidth // canvas高度

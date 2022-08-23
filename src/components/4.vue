@@ -13,7 +13,6 @@
 </template>
 
 <script setup>
-import { onMounted, reactive, ref } from 'vue';
 const renderer = ref(null)
 const box = ref(null)
 const option = reactive({

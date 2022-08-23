@@ -1,5 +1,4 @@
-import { onBeforeUnmount, onMounted, ref } from "vue";
-export default function () {
+export default  function () {
   const x = ref(0)
   const y = ref(0)
   const event = (e) => {

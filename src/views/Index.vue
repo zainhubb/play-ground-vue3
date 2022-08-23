@@ -7,8 +7,6 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router';
-
 const router = useRouter();
 const go = (e) => {
   router.hasRoute(e + '') && router.push(`/playground/${e}`)

@@ -1,16 +1,13 @@
 <template>
-    <a-result status="404" title="404"></a-result>
-    <!-- <my-slot>
+    <my-slot>
         <template #zain="info">{{ info.name }}</template>
-    </my-slot> -->
+    </my-slot>
 </template>
 
-<script setup>import { onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+<script setup>
 const router = useRouter()
 onMounted(() => {
     const tmp = router.currentRoute.value
-    console.log(tmp);
 })
 </script>
 
