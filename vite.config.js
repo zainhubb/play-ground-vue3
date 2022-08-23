@@ -22,6 +22,7 @@ export default defineConfig({
       imports: [
         'vue',
         'vue-router',
+        'pinia',
         {
           'vue-router':['createRouter','createWebHashHistory'],
           'troisjs': ['TroisJSVuePlugin'], // import { TroisJSVuePlugin } from 'troisjs';
@@ -31,11 +32,18 @@ export default defineConfig({
           ],
           'matter-js':[
             ['default','Matter'] // import { default as axios } from 'axios',
+          ],
+          'naive-ui': [
+            'useDialog',
+            'useMessage',
+            'useNotification',
+            'useLoadingBar',
+            'darkTheme',
           ]
         }
       ],
       // 优先级:导出名>文件名>上层文件夹名
-      dirs: ['src/hooks', 'src/router', 'src/network','src/utils'],
+      dirs: ['src/hooks', 'src/router', 'src/network','src/utils','src/pinia'],
     })
   ],
   base: './',

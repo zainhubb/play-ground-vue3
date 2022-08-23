@@ -1,7 +1,8 @@
 #app {
     min-width: 100vw;
     min-height: 100vh;
-    font-family: 'cinzel';
+    /* font-family: 'cinzel'; */
+    font-family: 'cinzel', 'Microsoft Yahei';
     background-color: var(--magic-bg);
 }
 
@@ -20,7 +21,7 @@
     src: url(./SpecialElite-Regular.ttf);
 }
 
-:root {
+html {
     color-scheme: light dark;
     --light-color: #333;
     --light-recolor: #fff;
@@ -41,28 +42,24 @@
     --dark-retextshadow: rgba(0, 0, 0, 0.3);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --magic-color: var(--dark-color);
-        --magic-recolor: var(--dark-recolor);
-        --magic-bg: var(--dark-bg);
-        --magic-rebg: var(--dark-rebg);
-        --magic-boxshadow: var(--dark-boxshadow);
-        --magic-reboxshadow: var(--dark-reboxshadow);
-        --magic-textshadow: var(--dark-textshadow);
-        --magic-retextshadow: var(--dark-retextshadow);
-    }
+html[data-mode='dark'] {
+    --magic-color: var(--dark-color);
+    --magic-recolor: var(--dark-recolor);
+    --magic-bg: var(--dark-bg);
+    --magic-rebg: var(--dark-rebg);
+    --magic-boxshadow: var(--dark-boxshadow);
+    --magic-reboxshadow: var(--dark-reboxshadow);
+    --magic-textshadow: var(--dark-textshadow);
+    --magic-retextshadow: var(--dark-retextshadow);
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --magic-color: var(--light-color);
-        --magic-recolor: var(--light-recolor);
-        --magic-bg: var(--light-bg);
-        --magic-rebg: var(--light-rebg);
-        --magic-boxshadow: var(--light-boxshadow);
-        --magic-reboxshadow: var(--light-reboxshadow);
-        --magic-textshadow: var(--light-textshadow);
-        --magic-retextshadow: var(--light-retextshadow);
-    }
+html {
+    --magic-color: var(--light-color);
+    --magic-recolor: var(--light-recolor);
+    --magic-bg: var(--light-bg);
+    --magic-rebg: var(--light-rebg);
+    --magic-boxshadow: var(--light-boxshadow);
+    --magic-reboxshadow: var(--light-reboxshadow);
+    --magic-textshadow: var(--light-textshadow);
+    --magic-retextshadow: var(--light-retextshadow);
 }
