@@ -2,9 +2,8 @@
   <div>
     <n-button @click="toggle">toggle</n-button>
     <demo :age="age"></demo>
-    <div class="flex bg-yellow-50 text-red-800 hover:text-blue">
-      <div class="">1</div>
-      <div>1</div>
+    <div class="flex bg-yellow-50 text-red-800 hover:text-blue hover:underline">
+      31
     </div>
   </div>
 </template>

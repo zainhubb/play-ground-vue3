@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main h-screen bg-bgcolor-light dark:bg-bgcolor-dark transition-colors	duration-300 ease-in-out">
     <n-config-provider :theme="theme" :theme-overrides="themeOverrides">
       <com-header></com-header>
       <router-view></router-view>
@@ -25,8 +25,6 @@ const themeOverrides = {
 
 <style scoped lang="postcss">
 .main {
-  width: 100vw;
-  height: 100vh;
   cursor: v-bind(cursorStyle);
 }
 </style>

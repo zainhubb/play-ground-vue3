@@ -1,9 +1,7 @@
 #app {
     min-width: 100vw;
     min-height: 100vh;
-    /* font-family: 'cinzel'; */
-    font-family: 'cinzel', 'Microsoft Yahei';
-    background-color: var(--magic-bg);
+    font-family: 'cinzel';
 }
 
 @font-face {

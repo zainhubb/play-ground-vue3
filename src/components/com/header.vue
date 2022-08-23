@@ -1,6 +1,7 @@
 <template>
-    <div :class="['header', { 'scrolled': scrolled }]">
-        <div class="text" @click="go">{{ isIndex ? 'zain' : 'back' }}</div>
+    <div
+        :class="['header flex sticky top-0 mb-[20px] pl-[20px] pr-[20px] items-center h-[60px] justify-between', { 'scrolled': scrolled }]">
+        <div class=" text " @click="go">{{ isIndex ? 'zain' : 'back' }}</div>
         <n-icon v-if="showMenu" @click="toggleDrawer">
             <Apps></Apps>
         </n-icon>
@@ -67,11 +68,8 @@ window.addEventListener('scroll', () => {
 
 <style scoped lang="postcss">
 .header {
-    @apply flex sticky top-0 mb-[20px] pl-[20px] pr-[20px] items-center h-[60px] justify-between;
     background-image: radial-gradient(transparent 1px, var(--magic-bg) 1px);
     background-size: 3px 3px;
-    color: var(--magic-color);
-
     & .text {
         text-shadow: 0 5px 5px var(--magic-textshadow);
     }
