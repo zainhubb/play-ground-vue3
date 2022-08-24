@@ -6,14 +6,16 @@ module.exports = {
   ],
   darkMode: ['class', '[data-mode="dark"]'],
   theme: {
-    extend: {},
-    colors:{
-      bgcolor:{
-        light:"#ffffff",
-        dark:"#2c2c32"
-      },
-      shallowblack:colors.neutral
-    }
+    extend: {
+      colors: {
+        bgcolor:{
+          light:"#ffffff",
+          dark:"#2c2c32"
+        },
+        shallowblack:colors.neutral
+
+      }
+    },
   },
   content: [
     './src/**/*.html',

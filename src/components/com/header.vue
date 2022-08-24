@@ -5,6 +5,17 @@
         <n-icon v-if="showMenu" @click="toggleDrawer">
             <Apps></Apps>
         </n-icon>
+        <n-switch v-else v-model:value="theme" size="medium" checked-value="dark" unchecked-value="light"
+            @click="changeTheme">
+            <template #icon>
+                <Sunny></Sunny>
+            </template>
+            <template #checked-icon>
+                <n-icon>
+                    <Moon></Moon>
+                </n-icon>
+            </template>
+        </n-switch>
         <n-drawer v-model:show="active" placement="right">
             <n-drawer-content title="menu">
                 <n-switch v-model:value="theme" size="medium" checked-value="dark" unchecked-value="light"
@@ -62,6 +73,7 @@ window.addEventListener('scroll', () => {
 .header {
     background-image: radial-gradient(transparent 1px, var(--magic-bg) 1px);
     background-size: 3px 3px;
+
     & .text {
         text-shadow: 0 5px 5px var(--magic-textshadow);
     }
