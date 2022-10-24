@@ -10,8 +10,8 @@ export default defineConfig({
     visualizer(),
     vue(),
     Components({
-      dirs: ['src/components'],
-      directoryAsNamespace: true,
+      // dirs: ['src/components'],
+      // directoryAsNamespace: true,
       resolvers: [NaiveUiResolver()]
     }),
     AutoImport({

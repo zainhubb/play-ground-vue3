@@ -1,7 +1,8 @@
 export const useStore = defineStore('main', {
   state:()=>{
     return {
-      theme:'light'
+      theme:'light',
+      requesting:false,
     }
   }
 })
