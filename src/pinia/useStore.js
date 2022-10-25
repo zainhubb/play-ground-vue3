@@ -3,6 +3,16 @@ export const useStore = defineStore('main', {
     return {
       theme:'light',
       requesting:false,
+      showModal:false,
+      requestConfig:undefined
+    }
+  },
+  actions:{
+    closeModal(){
+      this.showModal = false
+    },
+    openModal(){
+      this.showModal = true
     }
   }
 })

@@ -8,6 +8,7 @@
 
 <script setup>
 import { reject } from 'lodash';
+import { getUser } from '../network/api';
 
 const age = ref(0)
 const toggle = () => {
@@ -15,7 +16,17 @@ const toggle = () => {
 }
 
 const tryRequest = () => {
-  getUser()
+  // getUser()
+  postUser({
+    userId: 59,
+    id: 13333,
+    body: "sssss"
+  })
+  postUser({
+    userId: 12,
+    id: 5,
+    body: "aaaa"
+  })
 }
 </script>
 

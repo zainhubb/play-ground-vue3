@@ -6,6 +6,11 @@
       <commonmouse></commonmouse>
       <n-global-style />
     </n-config-provider>
+    <n-modal v-model:show="showModal" class="custom-card" preset="card" style="width:600px" title="二级密码" size="huge"
+      :bordered="false" :segmented="segmented">
+      <n-input style="width:200px" v-model:value="vcode"></n-input>
+      <n-button @click="confirmRequest">confirm</n-button>
+    </n-modal>
     <Teleport to="body">
       <div class="mask" v-show="requesting">
         <div class="spinner">
@@ -20,17 +25,27 @@
 </template>
 
 <script setup>
+import { computed } from '@vue/reactivity';
+const vcode = ref(0)
 const cursorStyle = computed(() => openCustomPointer ? 'none' : 'normal')
 const dark = computed(() => darkTheme)
 const store = useStore()
 const theme = computed(() => {
   return store.theme == 'dark' ? dark.value : ({})
 })
-const requesting = computed(()=>store.requesting)
+const requesting = computed(() => store.requesting)
+const showModal = computed(() => store.showModal)
+const requestConfig = computed(() => store.requestConfig)
 const themeOverrides = {
   common: {
     fontFamily: "cinzel"
   },
+}
+const confirmRequest = () => {
+  const tmpData = JSON.parse(requestConfig.value?.data??'{}')
+  tmpData.vcode = vcode.value
+  axios({ ...requestConfig.value, data:JSON.stringify(tmpData) })
+  store.requestConfig = undefined
 }
 </script>
 
