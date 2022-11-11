@@ -3,16 +3,16 @@
         :class="['header flex sticky top-0 mb-[20px] pl-[20px] pr-[20px] items-center h-[60px] justify-between', { 'scrolled': scrolled }]">
         <div class=" text " @click="go">{{ isIndex ? 'zain' : 'back' }}</div>
         <n-icon v-if="showMenu" @click="toggleDrawer">
-            <Apps></Apps>
+            <ic-baseline-apps />
         </n-icon>
         <n-switch v-else v-model:value="theme" size="medium" checked-value="dark" unchecked-value="light"
             @click="changeTheme">
             <template #icon>
-                <Sunny></Sunny>
+                <ic-baseline-light-mode />
             </template>
             <template #checked-icon>
                 <n-icon>
-                    <Moon></Moon>
+                    <ic-baseline-dark-mode />
                 </n-icon>
             </template>
         </n-switch>
@@ -21,11 +21,11 @@
                 <n-switch v-model:value="theme" size="medium" checked-value="dark" unchecked-value="light"
                     @click="changeTheme">
                     <template #icon>
-                        <Sunny></Sunny>
+                        <ic-baseline-light-mode />
                     </template>
                     <template #checked-icon>
                         <n-icon>
-                            <Moon></Moon>
+                            <ic-baseline-dark-mode />
                         </n-icon>
                     </template>
                 </n-switch>

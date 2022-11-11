@@ -5,14 +5,20 @@ import AutoImport from 'unplugin-auto-import/vite' // 自动导入依赖
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import { resolve } from "path";
 import { visualizer } from "rollup-plugin-visualizer";
+// icons
+import Icons from 'unplugin-icons/vite'
+// 自动引入icons
+import IconsResolver from 'unplugin-icons/resolver'
+
 export default defineConfig({
   plugins: [
+    Icons(),
     visualizer(),
     vue(),
     Components({
       // dirs: ['src/components'],
       // directoryAsNamespace: true,
-      resolvers: [NaiveUiResolver()]
+      resolvers: [NaiveUiResolver(),IconsResolver({prefix:false})]
     }),
     AutoImport({
       include: [
