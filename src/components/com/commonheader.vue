@@ -35,7 +35,6 @@
 </template>
 
 <script setup>
-import { Apps, Moon, Sunny } from "@vicons/ionicons5";
 const showMenu = computed(() => isMobile)
 const router = useRouter()
 const store = useStore()
@@ -71,7 +70,7 @@ window.addEventListener('scroll', () => {
 
 <style scoped lang="postcss">
 .header {
-    background-image: radial-gradient(transparent 1px, var(--magic-bg) 1px);
+    background-image: radial-gradient(var(--magic-bg) 1px,transparent 1px);
     background-size: 3px 3px;
 
     & .text {
@@ -80,7 +79,6 @@ window.addEventListener('scroll', () => {
 }
 
 .scrolled {
-    background-color: transparent;
     box-shadow: 1px 0 10px var(--magic-boxshadow);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
