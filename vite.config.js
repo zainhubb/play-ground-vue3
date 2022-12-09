@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import Components from 'unplugin-vue-components/vite' // 自动注册组件
 import AutoImport from 'unplugin-auto-import/vite' // 自动导入依赖
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
@@ -15,6 +16,7 @@ export default defineConfig({
     Icons(),
     visualizer(),
     vue(),
+    vueJsx(),
     Components({
       // dirs: ['src/components'],
       // directoryAsNamespace: true,

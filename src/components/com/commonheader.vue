@@ -70,10 +70,11 @@ window.addEventListener('scroll', () => {
 
 <style scoped lang="postcss">
 .header {
+    z-index: 999;
     background-image: radial-gradient(var(--magic-bg) 1px,transparent 1px);
     background-size: 3px 3px;
 
-    & .text {
+    .text {
         text-shadow: 0 5px 5px var(--magic-textshadow);
     }
 }

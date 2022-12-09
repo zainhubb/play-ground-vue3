@@ -17,7 +17,7 @@ const go = (e) => {
 
 <style  scoped lang="postcss">
 .container {
-  & .item {
+  .item {
   }
 }
 </style>

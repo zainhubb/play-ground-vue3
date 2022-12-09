@@ -28,6 +28,11 @@ const routes = [
         path: '4',
         name: '4',
         component: () => import('../components/4.vue')
+      },
+      {
+        path: '5',
+        name: '5',
+        component: () => import('../components/5.jsx')
       }
     ]
   },
