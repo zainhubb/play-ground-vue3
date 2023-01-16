@@ -1,7 +1,7 @@
 <template>
     <div
         :class="['header flex sticky top-0 mb-[20px] pl-[20px] pr-[20px] items-center h-[60px] justify-between', { 'scrolled': scrolled }]">
-        <div class=" text " @click="go">{{ isIndex ? 'zain' : 'back' }}</div>
+        <div class=" text " @click="go">{{ isIndex ? '🧠' : 'back' }}</div>
         <n-icon v-if="showMenu" @click="toggleDrawer">
             <ic-baseline-apps />
         </n-icon>
