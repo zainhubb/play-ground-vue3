@@ -1,1 +1,0 @@
-import{s,e as a,d as e,N as l,p as t,F as u}from"./index-017b3f9a.js";const o=s({setup(){a(0);const s=a([]),o=()=>{s.value.push(s.value.length+1)};return()=>e(u,null,[e(l,{onClick:o},{default:()=>[t("+")]}),e("div",{className:"blocks"},[s.value.map((s=>e("div",{className:"block text-red-800"},[s])))])])}});export{o as default};
