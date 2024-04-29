@@ -39,7 +39,7 @@ const routes = [
 
   {
     path:'/:pathParams(.*)*',
-    name:'good',
+    name:'404',
     component:()=> import('../components/NotFound.vue')
   }
 ]

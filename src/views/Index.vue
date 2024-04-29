@@ -1,4 +1,5 @@
 <template>
+  <commonheader></commonheader>
   <div>
     <div class="container flex gap-[10px] flex-wrap w-[320px] mx-auto mt-0 mb-0 p-[10px] box-content ">
       <div

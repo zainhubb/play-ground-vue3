@@ -1,7 +1,7 @@
 #app {
     min-width: 100vw;
     min-height: 100vh;
-    font-family: 'cinzel';
+    font-family: 'montserrat';
 }
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -16,19 +16,12 @@
 ::view-transition-new(root),[data-mode="dark"]::view-transition-old(root) {
     z-index: 1;
 }
-@font-face {
-    font-family: 'cinzel';
-    src: url(./Cinzel-VariableFont_wght.ttf);
-}
+
+
 
 @font-face {
-    font-family: 'homeapple';
-    src: url(./HomemadeApple-Regular.ttf);
-}
-
-@font-face {
-    font-family: 'specialelite';
-    src: url(./SpecialElite-Regular.ttf);
+    font-family: 'montserrat';
+    src: url(./Montserrat-VariableFont_wght.ttf);
 }
 
 html {

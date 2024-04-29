@@ -1,4 +1,5 @@
 export const useStore = defineStore('main', {
+  persist: true,
   state:()=>{
     return {
       theme:'light',
@@ -13,6 +14,12 @@ export const useStore = defineStore('main', {
     },
     openModal(){
       this.showModal = true
+    },
+    setTheme(v){
+      this.theme = v
     }
+  },
+  getters:{
+    themeGetters:(state)=>state.theme
   }
 })

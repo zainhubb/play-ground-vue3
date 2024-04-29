@@ -1,14 +1,20 @@
 <template>
-  <div class="main h-screen bg-bgcolor-light dark:bg-bgcolor-dark">
+  <div class="main bg-bgcolor-light dark:bg-bgcolor-dark">
     <n-config-provider :theme="theme" :theme-overrides="themeOverrides">
-      <commonheader></commonheader>
       <router-view></router-view>
       <commonmouse></commonmouse>
       <n-global-style />
     </n-config-provider>
-    <n-modal v-model:show="showModal" class="custom-card" preset="card" style="width:600px" title="二级密码" size="huge"
-      :bordered="false" :segmented="segmented">
-      <n-input style="width:200px" v-model:value="vcode"></n-input>
+    <n-modal
+      v-model:show="showModal"
+      class="custom-card"
+      preset="card"
+      style="width: 600px"
+      title="二级密码"
+      size="huge"
+      :bordered="false"
+    >
+      <n-input style="width: 200px" v-model:value="vcode"></n-input>
       <n-button @click="confirmRequest">confirm</n-button>
     </n-modal>
     <Teleport to="body">
@@ -25,28 +31,33 @@
 </template>
 
 <script setup>
-import { computed } from '@vue/reactivity';
-const vcode = ref(0)
-const cursorStyle = computed(() => openCustomPointer ? 'none' : 'normal')
-const dark = computed(() => darkTheme)
-const store = useStore()
+import { onMounted, computed } from "vue";
+import { setTheme } from "@utils";
+
+const vcode = ref(0);
+const cursorStyle = computed(() => (openCustomPointer ? "none" : "normal"));
+const dark = computed(() => darkTheme);
+const store = useStore();
 const theme = computed(() => {
-  return store.theme == 'dark' ? dark.value : ({})
-})
-const requesting = computed(() => store.requesting)
-const showModal = computed(() => store.showModal)
-const requestConfig = computed(() => store.requestConfig)
+  return store.theme == "dark" ? dark.value : {};
+});
+const requesting = computed(() => store.requesting);
+const showModal = computed(() => store.showModal);
+const requestConfig = computed(() => store.requestConfig);
 const themeOverrides = {
   common: {
-    fontFamily: "cinzel"
+    fontFamily: "montserrat",
   },
-}
+};
 const confirmRequest = () => {
-  const tmpData = JSON.parse(requestConfig.value?.data??'{}')
-  tmpData.vcode = vcode.value
-  axios({ ...requestConfig.value, data:JSON.stringify(tmpData) })
-  store.requestConfig = undefined
-}
+  const tmpData = JSON.parse(requestConfig.value?.data ?? "{}");
+  tmpData.vcode = vcode.value;
+  axios({ ...requestConfig.value, data: JSON.stringify(tmpData) });
+  store.requestConfig = undefined;
+};
+onMounted(() => {
+  setTheme(store.themeGetters);
+});
 </script>
 
 <style scoped lang="postcss">
@@ -92,7 +103,6 @@ const confirmRequest = () => {
       -webkit-animation-delay: -0.9s;
       animation-delay: -0.9s;
     }
-
   }
 }
 
@@ -112,5 +122,7 @@ const confirmRequest = () => {
 
 .main {
   cursor: v-bind(cursorStyle);
+  width: 100dvw;
+  height: 100dvh;
 }
 </style>
