@@ -62,7 +62,7 @@ const changeTheme = async ({ clientX:x, clientY:y }) => {
     document.documentElement.animate(
         { clipPath: theme.value == 'dark' ? clipPath: clipPath.reverse() },
         {
-            duration: 500,
+            duration: 300,
             easing: "ease-in-out",
             pseudoElement: `::view-transition-${theme.value == 'dark'?'new':'old'}(root)`,
         }
@@ -88,6 +88,11 @@ window.addEventListener('scroll', () => {
 
     .text {
         text-shadow: 0 5px 5px var(--magic-textshadow);
+    }
+    .n-switch{
+        :deep() .n-switch__rail{
+            cursor: none;
+        }
     }
 }
 

@@ -34,7 +34,8 @@ onMounted(() => {
   border-radius: 7.5px;
   background-color: #fff;
   pointer-events: none;
-  mix-blend-mode: exclusion
+  mix-blend-mode: exclusion;
+  z-index: 9999;
 }
 
 .mouseRange {
@@ -46,6 +47,7 @@ onMounted(() => {
   pointer-events: none;
   transition: 0.2s ease-out;
   pointer-events: none;
-  mix-blend-mode: exclusion
+  mix-blend-mode: exclusion;
+  z-index: 9999;
 }
 </style>
