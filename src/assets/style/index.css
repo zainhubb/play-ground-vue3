@@ -3,7 +3,19 @@
     min-height: 100vh;
     font-family: 'cinzel';
 }
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal; 
+}
 
+
+::view-transition-old(root),[data-mode="dark"]::view-transition-new(root) {
+    z-index: 9999;
+}
+::view-transition-new(root),[data-mode="dark"]::view-transition-old(root) {
+    z-index: 1;
+}
 @font-face {
     font-family: 'cinzel';
     src: url(./Cinzel-VariableFont_wght.ttf);

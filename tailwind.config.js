@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         bgcolor:{
           light:"#ffffff",
-          dark:"#2c2c32"
+          dark:"#333"
         },
         shallowblack:colors.neutral
 

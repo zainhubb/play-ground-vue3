@@ -1,5 +1,5 @@
 <template>
-  <div class="main h-screen bg-bgcolor-light dark:bg-bgcolor-dark transition-colors	duration-300 ease-in-out">
+  <div class="main h-screen bg-bgcolor-light dark:bg-bgcolor-dark">
     <n-config-provider :theme="theme" :theme-overrides="themeOverrides">
       <commonheader></commonheader>
       <router-view></router-view>

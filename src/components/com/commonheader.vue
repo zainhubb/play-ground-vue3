@@ -47,15 +47,27 @@ const toggleDrawer = () => {
     active.value = !active.value
 }
 const theme = ref('light')
-const changeTheme = () => {
-    if (theme.value == 'light') {
-        document.documentElement.setAttribute('data-mode', 'light')
-        store.theme = 'light'
-    } else {
-        document.documentElement.setAttribute('data-mode', 'dark')
-        store.theme = 'dark'
-    }
-}
+const changeTheme = async ({ clientX:x, clientY:y }) => {
+    const clipPath = [
+        `circle(0px at ${x}px ${y}px)`,
+        `circle(${Math.hypot(
+            Math.max(x, window.innerWidth - x),
+            Math.max(y, window.innerHeight - y)
+        )}px at ${x}px ${y}px)`,
+    ];
+    await document.startViewTransition(() => {
+        document.documentElement.setAttribute("data-mode", theme.value);
+        store.theme = theme.value;
+    }).ready
+    document.documentElement.animate(
+        { clipPath: theme.value == 'dark' ? clipPath: clipPath.reverse() },
+        {
+            duration: 500,
+            easing: "ease-in-out",
+            pseudoElement: `::view-transition-${theme.value == 'dark'?'new':'old'}(root)`,
+        }
+    );
+};
 onMounted(() => {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         theme.value = 'dark'
