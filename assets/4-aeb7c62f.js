@@ -1,0 +1,1 @@
+import{_ as s,e as a,q as t,g as e,o,c as i}from"./index-017b3f9a.js";const l={class:"container"},c=s({setup:s=>(a(null),a(null),t({orbitCtrl:!0,width:500,height:500}),e((()=>{})),(s,a)=>(o(),i("div",l)))},[["__scopeId","data-v-c137216e"]]);export{c as default};

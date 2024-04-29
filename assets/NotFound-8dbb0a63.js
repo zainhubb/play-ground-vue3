@@ -1,1 +1,0 @@
-import{e as s,v as a,x as t,y as e,u as n,g as u,o as r,z as o,w as l,p as c,t as i}from"./index-b792f3e5.js";const p={setup(n){const u=s({name:"zain"});return(s,n)=>a(s.$slots,"zain",t(e(u.value)))}},m={setup(s){const a=n();return u((()=>{a.currentRoute.value})),(s,a)=>{const t=p;return r(),o(t,null,{zain:l((s=>[c(i(s.name),1)])),_:1})}}};export{m as default};
