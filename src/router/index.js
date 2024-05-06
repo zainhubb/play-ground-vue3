@@ -1,3 +1,11 @@
+const files = import.meta.glob(['../components/*.vue','../components/*.jsx'])
+const views = Object.keys(files).map(i=>{
+  return {
+    path: i.replace(/..\/components\//,'').replace(/.vue/,'').replace(/.jsx/,''),
+    name: i.replace(/..\/components\//,'').replace(/.vue/,'').replace(/.jsx/,''),
+    component: files[i]
+  }
+})
 const routes = [
   {
     path: '/',
@@ -8,39 +16,13 @@ const routes = [
     path: '/playground',
     name: 'playground',
     component: () => import('../views/PlayGround.vue'),
-    children: [
-      {
-        path: '1',
-        name: '1',
-        component: () => import('../components/1.vue')
-      },
-      {
-        path: '2',
-        name: '2',
-        component: () => import('../components/2.vue')
-      },
-      {
-        path: '3',
-        name: '3',
-        component: () => import('../components/3.vue')
-      },
-      {
-        path: '4',
-        name: '4',
-        component: () => import('../components/4.vue')
-      },
-      {
-        path: '5',
-        name: '5',
-        component: () => import('../components/5.jsx')
-      }
-    ]
+    children: views
   },
 
   {
     path:'/:pathParams(.*)*',
     name:'404',
-    component:()=> import('../components/NotFound.vue')
+    component:()=> import('../views/NotFound.vue')
   }
 ]
 const router = createRouter({

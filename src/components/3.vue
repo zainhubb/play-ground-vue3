@@ -9,7 +9,7 @@
 <script setup>
 import { reject } from 'lodash';
 import { getUser } from '../network/api';
-
+import demo from '../views/demo.vue'
 const age = ref(0)
 const toggle = () => {
   age.value++
