@@ -1,1 +1,0 @@
-import{l as a,r as s,e,aq as l,ar as t,F as u}from"./index-f131090e.js";const o=a({setup(){s(0);const a=s([]),o=()=>{a.value.push(a.value.length+1)};return()=>e(u,null,[e(l,{onClick:o},{default:()=>[t("+")]}),e("div",{className:"blocks"},[a.value.map((a=>e("div",{className:"block text-red-800"},[a])))])])}});export{o as default};

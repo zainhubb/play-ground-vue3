@@ -1,1 +1,0 @@
-import{_ as a}from"./commonheader-1378a869.js";import{_ as s,ak as r,a as e,b as o,e as n,f as t,F as i}from"./index-f131090e.js";const m=s({},[["render",function(s,m){const u=a,d=r("router-view");return e(),o(i,null,[n(u),t("div",null,[n(d)])],64)}]]);export{m as default};
