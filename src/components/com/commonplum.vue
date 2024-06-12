@@ -5,13 +5,13 @@ const HEIGHT = window.innerHeight; // canvas高度
 const WIDTH = window.innerWidth; // canvas宽度
 let startX = 0; // 起始点横坐标
 let startY = 0; // 起始点纵坐标
-const startBranchLength = 5; // 起始线长度
+const startBranchLength = 3; // 起始线长度
 // const startAngle = startY === 0 ? Math.PI / 2 : startY === HEIGHT ? -Math.PI / 2 : startX == 0 ? 0 : -Math.PI // 起始线角度
 const minBranchLength = 5; // 保底深度
-const maxBranchLength = 100; // 最大深度
+const maxBranchLength = 200; // 最大深度
 const branchStep = 0.5; // 产生左分枝和右分枝的概率 注意，如果最大深度比较大，超过0.5可能会变得很卡
-const angleRange = 0.15; // 子树叶角度范围
-const lengthRange = 0.1; // 子树叶长度范围
+const angleRange = 0.18; // 子树叶角度范围
+const lengthRange = 0; // 子树叶长度范围
 // const startPoint = {  // 初始话起始点
 //     x: startX, y: startY
 // }
@@ -121,7 +121,7 @@ function drawLine(p1, p2) {
   ctx.value.beginPath();
   ctx.value.moveTo(p1.x, p1.y);
   ctx.value.lineTo(p2.x, p2.y);
-  ctx.value.strokeStyle = "rgba(0,0,0,0.17)";
+  ctx.value.strokeStyle = "rgba(0,0,0,0.1)";
   ctx.value.stroke();
 }
 // 获取线段终点坐标
