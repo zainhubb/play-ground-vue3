@@ -79,18 +79,28 @@ window.addEventListener("scroll", () => {
 
 <style scoped lang="postcss">
 @keyframes shakehand {
-  0% {
-    transform: rotateZ(0deg);
+  2% {
+    transform: rotate(15deg);
   }
 
-  82% {
-    transform: rotateZ(0deg);
+  4% {
+    transform: rotate(-10deg);
   }
-  91%{
-    transform: rotateZ(25deg);
+
+  6% {
+    transform: rotate(5deg);
   }
-  100% {
-    transform: rotateZ(0);
+
+  8% {
+    transform: rotate(-5deg);
+  }
+
+  10% {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(0);
   }
 }
 .header {
@@ -102,7 +112,7 @@ window.addEventListener("scroll", () => {
     text-shadow: 0 5px 5px var(--magic-textshadow);
   }
   .isIndex {
-    animation: shakehand 4s infinite ease-in-out;
+    animation: shakehand  8s 0s infinite ease-in-out;
   }
   .n-switch {
     :deep() .n-switch__rail {
