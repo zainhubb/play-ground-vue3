@@ -1,1 +1,0 @@
-import{_ as a,r as s,l as t,o as e,a as l,b as o}from"./index-4f45bf8b.js";const i={class:"container"},r=a({setup:a=>(s(null),s(null),t({orbitCtrl:!0,width:500,height:500}),e((()=>{})),(a,s)=>(l(),o("div",i)))},[["__scopeId","data-v-c137216e"]]);export{r as default};
